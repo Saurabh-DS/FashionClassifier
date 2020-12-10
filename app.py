@@ -19,7 +19,7 @@ def ValuePredictor(np_arr):
 
 # noinspection PyUnresolvedReferences
 def image_preprocess(img):
-  new_shape = (50, 50, 3)
+  new_shape = (28, 28)
   img = image.load_img(img)
   image_array = image.img_to_array(img)
   image_array = transform.resize(image_array, new_shape, anti_aliasing = True)
