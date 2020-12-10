@@ -29,7 +29,7 @@ def image_preprocess(img):
 
 @app.route('/')
 def home():
-  return render_template("FashionClassifier.html")
+  return render_template("FashionClassifier2.html")
 
 
 # noinspection PyUnresolvedReferences
@@ -48,7 +48,7 @@ def result():
         else:
             prediction='This cell is most likely to be Infected with Malarial Parasite.'
         print(prediction)
-        return render_template("FashionClassifier.html", prediction=prediction)
+        return render_template("result.html", prediction=prediction)
 
 if __name__ == "__main__":
   app.run()
