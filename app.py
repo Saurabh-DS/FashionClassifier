@@ -26,8 +26,7 @@ def index():
 
         with open('uploads/{}'.format(name), 'r+b') as f:
             with Image.open(f) as image:
-                new_shape = (28, 28)
-                cover = transform.resize(image, new_shape, anti_aliasing=True)
+                cover = resizeimage.resize_cover(image, [28, 28])
                 cover.save('uploads/{}'.format(name), image.format)
 
         img = Image.open('uploads/{}'.format(name))
