@@ -32,7 +32,7 @@ def index():
         img = Image.open('uploads/{}'.format(name))
         array = np.array(img)
 
-        new_model = tf.keras.models.load_model("MNIST_classifier_nn_model.h5")
+        new_model = tf.keras.models.load_model("mnistmodel.h5")
 
         pred = new_model.predict(np.array([array]))
 
