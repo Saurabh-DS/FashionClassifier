@@ -2,7 +2,7 @@ import os
 import numpy as np
 import tensorflow as tf
 from PIL import Image
-# from resizeimage import resizeimage
+from resizeimage import resizeimage
 from flask import Flask, request, render_template, send_from_directory
 from skimage import transform
 
