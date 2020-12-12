@@ -20,6 +20,10 @@ from gevent.pywsgi import WSGIServer
 app = Flask(__name__)
 model = load_model("MNIST_classifier_nn_model.h5")
 
+@app.route('/', methods=['GET'])
+def home():
+    return render_template('FashionClassifier.html')
+
 @app.route('/predict',methods=['POST'])
 def model_predict(img_path, model):
     img = image.load_img(img_path, target_size=(224, 224))
@@ -33,11 +37,6 @@ def model_predict(img_path, model):
 
     preds = model.predict(x)
     return preds
-
-@app.route('/', methods=['GET'])
-def index():
-    # Main page
-    return render_template('FashionClassifier.html')
 
 @app.route('/predict', methods=['GET', 'POST'])
 def upload():
