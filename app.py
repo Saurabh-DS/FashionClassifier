@@ -5,6 +5,9 @@ from PIL import Image
 from resizeimage import resizeimage
 from flask import Flask, request, render_template, send_from_directory
 from skimage import transform
+from keras.applications.imagenet_utils import preprocess_input, decode_predictions
+from keras.models import load_model
+from keras.preprocessing import image
 
 app = Flask(__name__)
 model = tf.keras.models.load_model("MNIST_classifier_nn_model.h5")
