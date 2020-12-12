@@ -10,6 +10,11 @@ from skimage import transform
 UPLOAD_FOLDER = 'uploads'
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+new_model = tf.keras.models.load_model("MNIST_classifier_nn_model.h5")
+
+@app.route('/')
+def home():
+    return render_template('FashionClassifier.html')
 
 
 # Your Route
