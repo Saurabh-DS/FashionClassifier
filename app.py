@@ -53,13 +53,15 @@ def send_file(filename):
     return send_from_directory(UPLOAD_FOLDER, filename)
 
 
-'''def create_app():
+def create_app():
     load__model()
-    return app'''
+    return app
 
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True, use_reloader=False)
+    
+    
 
 '''
 import numpy as np
