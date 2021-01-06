@@ -1,4 +1,4 @@
-import os
+'''import os
 import numpy as np
 import tensorflow as tf
 from tensorflow import keras
@@ -52,13 +52,13 @@ def get_delay():
 
 if __name__ == '__main__':
     app.run(port=8080, debug=True)
-
+'''
 
 '''@app.route('/', methods=['GET'])
 def home():
-    return render_template('predict.html')
+    return render_template('FashionClassifier.html')
 
-@app.route('/predict',methods=['POST'])
+@app.route('/api',methods=['POST'])
 def model_predict(img_path, model):
     img = image.load_img(img_path, target_size=(224, 224))
 
@@ -72,7 +72,7 @@ def model_predict(img_path, model):
     preds = model.predict(x)
     return preds
 
-@app.route('/predict', methods=['GET', 'POST'])
+@app.route('/api', methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST':
         # Get the file from post request
@@ -100,7 +100,7 @@ if __name__ == '__main__':
 
 
 
-'''import os
+import os
 import numpy as np
 import tensorflow as tf
 from PIL import Image
@@ -126,7 +126,7 @@ model = load_model("MNIST_classifier_nn_model.h5")
 def home():
     return render_template('FashionClassifier.html')
 
-@app.route('/predict',methods=['POST'])
+@app.route('/api',methods=['POST'])
 def model_predict(img_path, model):
     img = image.load_img(img_path, target_size=(224, 224))
 
@@ -140,7 +140,7 @@ def model_predict(img_path, model):
     preds = model.predict(x)
     return preds
 
-@app.route('/predict', methods=['GET', 'POST'])
+@app.route('/api', methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST':
         # Get the file from post request
