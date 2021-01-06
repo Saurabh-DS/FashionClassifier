@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('predict.html')
+    return render_template('FashionClassifier.html')
 
 @app.route('/api',methods=['POST'])
 def get_delay():
@@ -28,25 +28,25 @@ def get_delay():
 
     output = round(pred[0], 2)
     if output == 0:
-        return render_template('predict.html', prediction_text="It's a T-shirt/top!")
+        return render_template('FashionClassifier.html', prediction_text="It's a T-shirt/top!")
     elif output == 1:
-        return render_template('predict.html', prediction_text="It's a Trouser")
+        return render_template('FashionClassifier.html', prediction_text="It's a Trouser")
     elif output == 2:
-        return render_template('predict.html', prediction_text="It's a Pullover")
+        return render_template('FashionClassifier.html', prediction_text="It's a Pullover")
     elif output == 3:
-        return render_template('predicthtml', prediction_text="It's a Dress")
+        return render_template('FashionClassifier.html', prediction_text="It's a Dress")
     elif output == 4:
-        return render_template('predict.html', prediction_text="It's a Coat")
+        return render_template('FashionClassifier.html', prediction_text="It's a Coat")
     elif output == 5:
-        return render_template('predict.html', prediction_text="It's a Sandal")
+        return render_template('FashionClassifier.html', prediction_text="It's a Sandal")
     elif output == 6:
-        return render_template('predict.html', prediction_text="It's a Shirt")
+        return render_template('FashionClassifier.html', prediction_text="It's a Shirt")
     elif output == 7:
-        return render_template('predict.html', prediction_text="It's a Sneaker")
+        return render_template('FashionClassifier.html', prediction_text="It's a Sneaker")
     elif output == 8:
-        return render_template('predict.html', prediction_text="It's a Bag")
+        return render_template('FashionClassifier.html', prediction_text="It's a Bag")
     else:
-        return render_template('predict.html', prediction_text="It's a Ankle boot")
+        return render_template('FashionClassifier.html', prediction_text="It's a Ankle boot")
 
 
 
